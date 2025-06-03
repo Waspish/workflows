@@ -24,4 +24,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Selenium Safari Test
-        run: python test_safari.py
+        run: python test.py
