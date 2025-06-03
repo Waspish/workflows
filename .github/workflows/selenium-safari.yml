@@ -1,4 +1,4 @@
-name: Run Selenium Chrome Test
+name: Run Selenium Safari Test
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest   # <-- use macOS here!
 
     steps:
       - name: Checkout code
@@ -23,8 +23,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Set up Chrome
-        uses: browser-actions/setup-chrome@v1
+      - name: Enable Safari Driver
+        run: safaridriver --enable
 
-      - name: Run Selenium Test
-        run: python test.py
+      - name: Run Selenium Safari Test
+        run: python test_safari.py
