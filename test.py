@@ -9,6 +9,8 @@ options.add_argument("--disable-dev-shm-usage")
 
 driver = webdriver.Chrome(options=options, service=ChromeService(ChromeDriverManager().install()))
 
+print("CI/CD is working!")
+
 base_url = 'https://www.saucedemo.com/'
 driver.get(base_url)
 driver.set_window_size(1920, 1080)
